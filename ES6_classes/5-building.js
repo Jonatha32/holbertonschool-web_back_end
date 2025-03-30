@@ -3,7 +3,7 @@ export default class Building {
     if (this.constructor !== Building && typeof this.evacuationWarningMessage !== 'function') {
       throw new Error('Class extending Building must override evacuationWarningMessage');
     }
-    this._sqft = sqft
+    this._sqft = sqft;
   }
 
   get sqft() {
@@ -14,6 +14,6 @@ export default class Building {
     if (typeof newSqft !== 'number') {
       throw new TypeError('sqft must be a number');
     }
-    this._sqft = newSqft
+    this._sqft = newSqft;
   }
 }
