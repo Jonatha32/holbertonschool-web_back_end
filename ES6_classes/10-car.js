@@ -14,14 +14,14 @@ export default class Car {
   }
 
   get motor() {
-    return this._color;
+    return this._motor;
   }
 
   cloneCar() {
     const SymKey = Symbol('Car');
     const clone = Object.assign(
       Object.create(Object.getPrototypeOf(this)),
-      { [SymKey]: true }
+      { [SymKey]: true },
     );
     return clone;
   }
