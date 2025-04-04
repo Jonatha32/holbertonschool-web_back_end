@@ -1,4 +1,4 @@
-function getListStudentsByLocation(students, city) {
+function getStudentsByLocation(students, city) {
   if (!Array.isArray(students)) {
     return [];
   }
