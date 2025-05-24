@@ -1,5 +1,5 @@
 // 3-read_file_async
-\\
+
 async function countStudents(path) {
   try {
     const data = await FileSystem.readFile(path, 'utf8');
