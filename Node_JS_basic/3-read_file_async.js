@@ -1,23 +1,27 @@
-// 3-read_file_async
+// 3-read_file
+
+const fs = require('fs').promises;
 
 async function countStudents(path) {
   try {
-    const data = await FileSystem.readFile(path, 'utf8');
+    const data = await fs.readFile(path, 'utf8');
     const lines = data.split('\n').filter((line) => line.trim() !== '');
-    const students = line.slice(1);
+
+    const students = lines.slice(1);
 
     const fields = {};
 
     students.forEach((student) => {
-      const [firstName, , , field] = student.split(',');
+      const [firstname, , , field] = student.split(',');
 
       if (!fields[field]) {
         fields[field] = [];
       }
-      fields[field].push(firstName);
+      fields[field].push(firstname);
     });
 
     console.log(`Number of students: ${students.length}`);
+
     for (const [field, names] of Object.entries(fields)) {
       console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
     }
